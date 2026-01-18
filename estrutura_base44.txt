@@ -1,0 +1,26 @@
+projeto-analise-econometrica/
+├── README.md
+├── generate_project.py
+├── Dockerfile
+├── docker-compose.yml
+├── nginx.conf
+├── package.json
+└── project_files/
+    ├── entities/
+    │   └── EconometricAnalysis.json
+    ├── pages/
+    │   ├── Home.js
+    │   ├── Login.js
+    │   └── DownloadProject.js
+    └── components/
+        └── analysis/
+            ├── UploadSection.js
+            ├── ModelSelector.js
+            ├── VariableSelector.js
+            ├── AnalysisResults.js
+            ├── CoefficientsTable.js
+            ├── ModelStatistics.js
+            ├── ResidualsChart.js
+            ├── ScatterPlot.js
+            ├── AnalysisList.js
+            └── DetailedDiagnostics.js
