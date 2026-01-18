@@ -9,112 +9,271 @@ ARQUIVO: README.md
 
 # Análise Econométrica
 
-Este projeto visa fornecer uma ferramenta abrangente para a análise econométrica, permitindo a análise de dados financeiros e econômicos com técnicas modernas. O aplicativo oferece uma interface amigável e permite que os usuários realizem diversas análises estatísticas e visualizações de dados.
+Este projeto tem como objetivo realizar análises econométricas utilizando dados econômicos. Ele permite a aplicação de diferentes modelos estatísticos para identificar tendências, fazer previsões e entender relações entre variáveis econômicas. É ideal para estudantes, pesquisadores e profissionais da área de economia e finanças que desejam explorar dados de forma eficiente.
 
 ## Funcionalidades Principais
 
-- Realização de regressões lineares e não-lineares
-- Análise de resíduos e diagnósticos de modelos
-- Geração de gráficos e visualizações interativas
-- Exportação de resultados e gráficos em diversos formatos
-- Suporte para importação de conjuntos de dados em formatos CSV e Excel
+- Importação e limpeza de dados econômicos.
+- Análise descritiva e visualização dos dados.
+- Aplicação de modelos de regressão linear e não linear.
+- Testes de hipóteses estatísticas.
+- Geração de previsões com base nos modelos ajustados.
+- Exportação dos resultados em formatos como CSV e gráficos.
 
 ## Estrutura de Arquivos
 
 ```
-análise-econométrica/
-│
-├── src/                         # Código fonte do projeto
-│   ├── main.py                  # Arquivo principal do aplicativo
-│   ├── econometrics.py          # Módulo com funções de análise econométrica
-│   └── utils.py                 # Módulo com funções utilitárias
-│
-├── data/                        # Conjuntos de dados
-│   ├── dados_exemplo.csv        # Exemplo de conjunto de dados
-│   └── outros_dados.xlsx        # Outros conjuntos de dados
-│
-├── docs/                        # Documentação do projeto
-│   └── manual_usuário.md        # Manual do usuário em Markdown
-│
-├── tests/                       # Testes do projeto
-│   ├── test_econometrics.py     # Testes para funções de análise econométrica
-│   └── test_utils.py            # Testes para funções utilitárias
-│
-├── requirements.txt             # Dependências do projeto
-└── README.md                    # Este arquivo
+/analise_econometrica
+├── /data                  # Pasta para armazenar dados
+│   └── dados_economicos.csv
+├── /notebooks             # Jupyter Notebooks para análise interativa
+│   └── analise_notebook.ipynb
+├── /src                  # Código fonte do projeto
+│   ├── __init__.py
+│   ├── preprocessing.py   # Funções para pré-processamento de dados
+│   ├── analysis.py        # Funções para análise econométrica
+│   ├── visualization.py    # Funções para visualização de resultados
+├── /outputs              # Resultados da análise
+│   ├── relatorio_resultados.pdf
+│   └── graficos/
+├── generate_project.py    # Script para gerar a estrutura do projeto
+└── README.md              # Documentação do projeto
 ```
 
 ## Como Usar o Aplicativo
 
-1. Clone este repositório para sua máquina local:
+1. **Clone o repositório**: 
    ```bash
-   git clone https://github.com/seu_usuario/análise-econométrica.git
-   cd análise-econométrica
+   git clone https://github.com/seu_usuario/analise_econometrica.git
    ```
-
-2. Instale as dependências necessárias:
+   
+2. **Instale as dependências**: 
+   Certifique-se de ter o Python e pip instalados, e execute:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. Execute o aplicativo principal:
+3. **Execute o Jupyter Notebook**:
+   Navegue até a pasta do projeto e execute:
    ```bash
-   python src/main.py
+   jupyter notebook
    ```
-
-4. Siga as instruções na interface para carregar seus dados e realizar análises.
+   Abra o arquivo `analise_notebook.ipynb` e siga as instruções ali.
 
 ## Tecnologias Utilizadas
 
 - Python 3.x
-- Bibliotecas: `numpy`, `pandas`, `matplotlib`, `seaborn`, `statsmodels`, `scikit-learn`
-- Ambiente virtual para gestão de dependências
+- Pandas
+- NumPy
+- Statsmodels
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
 
 ## Instruções para Executar o `generate_project.py`
 
-O script `generate_project.py` é utilizado para gerar a estrutura básica do projeto. Para executá-lo, siga os passos abaixo:
+O `generate_project.py` é um script que ajuda a gerar a estrutura básica do projeto. Para utilizá-lo:
 
-1. Navegue até o diretório onde o script está localizado.
-2. Execute o script utilizando o Python:
+1. Abra um terminal e navegue até a pasta do projeto.
+2. Execute o script utilizando o comando:
    ```bash
    python generate_project.py
    ```
-3. O script irá criar a estrutura de diretórios e arquivos conforme especificado.
+3. Após a execução, a estrutura de arquivos padrão será criada, e você poderá começar a desenvolver suas análises econométricas.
 
-Lembre-se de ajustar o script conforme necessário para incluir suas preferências de configuração.
+Certifique-se de que você tenha permissões adequadas para executar scripts em sua máquina e que o Python esteja corretamente instalado.
 
 
 ================================================================================
 ARQUIVO: generate_project.py
 ================================================================================
 
+#!/usr/bin/env python3
 import os
+import json
 
-project_structure = {
-    "entities/EconometricAnalysis.json": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "pages/Home.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "pages/Login.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "pages/DownloadProject.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/UploadSection.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/ModelSelector.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/VariableSelector.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/AnalysisResults.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/CoefficientsTable.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/ModelStatistics.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/ResidualsChart.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/ScatterPlot.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/AnalysisList.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
-    "components/analysis/DetailedDiagnostics.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768561249454\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n"
+# Estrutura de arquivos do projeto
+PROJECT_FILES = {
+  "entities/EconometricAnalysis.json": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "pages/Home.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "pages/Login.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "pages/DownloadProject.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/UploadSection.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/ModelSelector.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/VariableSelector.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/AnalysisResults.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/CoefficientsTable.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/ModelStatistics.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/ResidualsChart.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/ScatterPlot.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/AnalysisList.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n",
+  "components/analysis/DetailedDiagnostics.js": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"https://base44.com/logo_v2.svg\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"manifest\" href=\"/manifest.json\" />\n    <title>Base44 APP</title>\n      <!-- Tailwind CSS CDN for visual editing -->\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/unhandled-errors-handlers.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-hmr-notifier.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/navigation-notifier.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.jsx?t=1768704040265\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js\" type=\"module\"></script>\n    <script src=\"/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js\" type=\"module\"></script>\n  </body>\n</html>\n"
 }
 
-def create_project():
-    for filepath, content in project_structure.items():
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        with open(filepath, 'w') as f:
+def create_project_structure():
+    """Cria toda a estrutura do projeto recursivamente"""
+    print("🚀 Iniciando geração do projeto...")
+    
+    # Criar diretórios base
+    base_dirs = set()
+    for file_path in PROJECT_FILES.keys():
+        dir_path = os.path.dirname(file_path)
+        if dir_path:
+            base_dirs.add(dir_path)
+    
+    # Criar todos os diretórios recursivamente
+    for dir_path in sorted(base_dirs):
+        os.makedirs(dir_path, exist_ok=True)
+        print(f"📁 Diretório criado: {dir_path}")
+    
+    # Criar todos os arquivos
+    for file_path, content in PROJECT_FILES.items():
+        with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
+        print(f"✅ Arquivo criado: {file_path}")
+    
+    print("\n✨ Projeto gerado com sucesso!")
+    print("\n📦 Estrutura criada:")
+    print_tree(".", prefix="")
+
+def print_tree(directory, prefix=""):
+    """Imprime a árvore de diretórios"""
+    try:
+        entries = sorted(os.listdir(directory))
+        dirs = [e for e in entries if os.path.isdir(os.path.join(directory, e)) and not e.startswith('.')]
+        files = [e for e in entries if os.path.isfile(os.path.join(directory, e))]
+        
+        for d in dirs:
+            print(f"{prefix}├── {d}/")
+            print_tree(os.path.join(directory, d), prefix + "│   ")
+        
+        for f in files:
+            print(f"{prefix}├── {f}")
+    except PermissionError:
+        pass
 
 if __name__ == "__main__":
-    create_project()
+    create_project_structure()
+
+
+
+================================================================================
+ARQUIVO: Dockerfile
+================================================================================
+
+# Build stage
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+# Copiar package.json
+COPY package*.json ./
+
+# Instalar dependências
+RUN npm install
+
+# Copiar código fonte
+COPY . .
+
+# Build da aplicação
+RUN npm run build
+
+# Production stage
+FROM nginx:alpine
+
+# Copiar build da aplicação
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Copiar configuração nginx
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+
+
+
+================================================================================
+ARQUIVO: docker-compose.yml
+================================================================================
+
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+    networks:
+      - econometric-network
+
+networks:
+  econometric-network:
+    driver: bridge
+
+
+
+================================================================================
+ARQUIVO: nginx.conf
+================================================================================
+
+server {
+    listen 80;
+    server_name localhost;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api {
+        proxy_pass http://backend:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+
+
+================================================================================
+ARQUIVO: package.json
+================================================================================
+
+{
+  "name": "analise-econometrica",
+  "version": "1.0.0",
+  "description": "Sistema de Análise Econométrica com IA",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.15.4",
+    "lucide-react": "^0.475.0",
+    "date-fns": "^3.6.0",
+    "@tanstack/react-query": "^5.84.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.0.0",
+    "tailwindcss": "^3.0.0",
+    "autoprefixer": "^10.0.0",
+    "postcss": "^8.0.0"
+  }
+}
+
 
 
 ================================================================================
@@ -144,7 +303,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -179,7 +338,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -214,7 +373,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -249,7 +408,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -284,7 +443,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -319,7 +478,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -354,7 +513,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -389,7 +548,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -424,7 +583,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -459,7 +618,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -494,7 +653,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -529,7 +688,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -564,7 +723,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
@@ -599,7 +758,7 @@ window.$RefreshSig$ = () => (type) => type;</script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx?t=1768561249454"></script>
+    <script type="module" src="/src/main.jsx?t=1768704040265"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/sandbox-mount-observer.js" type="module"></script>
     <script src="/node_modules/@base44/vite-plugin/dist/injections/visual-edit-agent.js" type="module"></script>
   </body>
